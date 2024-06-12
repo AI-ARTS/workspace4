@@ -13,7 +13,9 @@ namespace sylar{
 
 Address::ptr Address::LookupAny(const std::string& host, 
     int family, int type, int protocol){
-        std::vector<Address::ptr> result;
+        // 此函数是域名解析，然后将解析到的结果返回一个。
+        std::vector<Address::ptr> result; 
+        // 这个Lookup的函数是用来解析域名的。
         if(Lookup(result, host, family, type, protocol)){
             return result[0];
         }
@@ -26,6 +28,7 @@ IPAddress::ptr Address::LookupAnyIPAddress(const std::string& host,
         std::vector<Address::ptr> result;
         if(Lookup(result, host, family, type, protocol)) {
             for(auto& i : result) {
+                // 将其转换成IPAddress的形式返回。
                 IPAddress::ptr v = std::dynamic_pointer_cast<IPAddress>(i);
                 if(v) {
                     return v;
@@ -35,6 +38,7 @@ IPAddress::ptr Address::LookupAnyIPAddress(const std::string& host,
         return nullptr;
     }
 
+// 此函数用来域名解析函数
 bool Address::Lookup(std::vector<Address::ptr>& result, const std::string& host, int family, int type, int protocol) {
     addrinfo hints, *results, *next;
     memset(&hints, 0, sizeof(addrinfo));
@@ -64,7 +68,7 @@ bool Address::Lookup(std::vector<Address::ptr>& result, const std::string& host,
     if (node.empty()) {
         return false;
     }
-
+    // 关键使用的是这个函数来进行解析的。
     int error = getaddrinfo(node.c_str(), service.empty() ? nullptr : service.c_str(), &hints, &results);
     if (error) {
         SYLAR_LOG_ERROR(SYLAR_LOG_NAME("system")) << "Address::Lookup getaddrinfo(" << host << ", "
