@@ -1,0 +1,13 @@
+/home/aldd/project/workspace4/build/CMakeFiles/sylar.dir
+/home/aldd/project/workspace4/build/CMakeFiles/test.dir
+/home/aldd/project/workspace4/build/CMakeFiles/test_fiber.dir
+/home/aldd/project/workspace4/build/CMakeFiles/test_schedule.dir
+/home/aldd/project/workspace4/build/CMakeFiles/test_iomanager.dir
+/home/aldd/project/workspace4/build/CMakeFiles/test_Timer.dir
+/home/aldd/project/workspace4/build/CMakeFiles/test_hook.dir
+/home/aldd/project/workspace4/build/CMakeFiles/test_http.dir
+/home/aldd/project/workspace4/build/CMakeFiles/test_address.dir
+/home/aldd/project/workspace4/build/CMakeFiles/test_sock.dir
+/home/aldd/project/workspace4/build/CMakeFiles/test_server.dir
+/home/aldd/project/workspace4/build/CMakeFiles/edit_cache.dir
+/home/aldd/project/workspace4/build/CMakeFiles/rebuild_cache.dir
